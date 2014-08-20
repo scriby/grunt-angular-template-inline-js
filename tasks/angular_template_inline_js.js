@@ -42,7 +42,9 @@ module.exports = function(grunt) {
 
         grunt.file.write(f.dest, compiled);
 
-        grunt.log.writeln('File "' + f.dest + '" created.');
+        if(compiled !== fileInfo.contents) {
+          grunt.log.writeln('File "' + f.dest + '" written.');
+        }
       });
     });
   });
