@@ -22,6 +22,8 @@ var grunt = require('grunt');
     test.ifError(value)
 */
 
+var SIMPLE_RESULT = "{ template: \'<!--template path: ./simple.html-->\nsimple contents\n<!--end template-->\' }";
+
 exports.angular_template_inline_js = {
   setUp: function(done) {
     // setup here if necessary
@@ -30,35 +32,22 @@ exports.angular_template_inline_js = {
   simple: function(test) {
     test.expect(1);
 
-    test.equal(
-      grunt.file.read(__dirname + '/../tmp/fixtures/simple.js'),
-      "{ template: 'simple contents' }"
-    );
+    test.equal(grunt.file.read(__dirname + '/../tmp/fixtures/simple.js'), SIMPLE_RESULT);
 
     test.done();
   },
   multi_file: function(test) {
     test.expect(2);
 
-    test.equal(
-      grunt.file.read(__dirname + '/../tmp/fixtures/simple-2.js'),
-      "{ template: 'simple contents' }"
-    );
-
-    test.equal(
-      grunt.file.read(__dirname + '/../tmp/fixtures/simple-3.js'),
-      "{ template: 'simple contents' }"
-    );
+    test.equal(grunt.file.read(__dirname + '/../tmp/fixtures/simple-2.js'), SIMPLE_RESULT);
+    test.equal(grunt.file.read(__dirname + '/../tmp/fixtures/simple-3.js'), SIMPLE_RESULT);
 
     test.done();
   },
   key: function(test) {
     test.expect(1);
 
-    test.equal(
-      grunt.file.read(__dirname + '/../tmp/fixtures/key.js'),
-      "{ template: 'simple contents' }"
-    );
+    test.equal(grunt.file.read(__dirname + '/../tmp/fixtures/key.js'), SIMPLE_RESULT);
 
     test.done();
   }
