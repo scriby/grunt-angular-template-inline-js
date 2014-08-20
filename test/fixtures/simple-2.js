@@ -1,0 +1,1 @@
+{ templateUrl: './simple.html' }

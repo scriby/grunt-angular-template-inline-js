@@ -1,0 +1,1 @@
+{ inlineTemplate: './simple.html' }
