@@ -1,7 +1,7 @@
 {
   "name": "grunt-angular-template-inline-js",
   "description": "A grunt task runner for angular-template-inline-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/scriby/grunt-angular-template-inline-js",
   "author": {
     "name": "scriby",
