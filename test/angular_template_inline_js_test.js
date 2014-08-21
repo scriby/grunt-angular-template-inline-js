@@ -22,7 +22,7 @@ var grunt = require('grunt');
     test.ifError(value)
 */
 
-var SIMPLE_RESULT = "{ template: ('./simple.html', 'simple contents') }";
+var SIMPLE_RESULT = "{ template: ('./simple.html', 'simple contents' + '') }";
 
 exports.angular_template_inline_js = {
   setUp: function(done) {
