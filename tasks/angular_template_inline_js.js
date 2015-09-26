@@ -18,7 +18,11 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('angular_template_inline_js', 'A grunt task runner for angular-template-inline-js', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
-      key: 'templateUrl'
+      key: 'templateUrl',
+	  minify: {
+		  useHtmlMin : false,
+		  options: {}
+	  }
     });
 
     // Iterate over all specified file groups.
@@ -37,7 +41,8 @@ module.exports = function(grunt) {
       }).forEach(function(fileInfo) {
         var compiled = compiler.compile(fileInfo.contents, {
           basePath: options.basePath || path.dirname(fileInfo.path),
-          key: options.key
+          key: options.key,
+		  minify : options.minify
         });
 
         grunt.file.write(f.dest, compiled);
